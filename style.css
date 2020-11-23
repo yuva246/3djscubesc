@@ -1,0 +1,22 @@
+ @import url('https://fonts.googleapis.com/css2?family=Texturina:wght@300&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+ 
+ h3 { 
+ font-family: 'Texturina', serif;
+ 
+}
+ h4 { 
+ font-family: 'Major Mono Display', monospace;
+ 
+}
+ .line{
+ background: #000;
+ width: 360px;
+ height: 1px;
+}
+ .am{
+ background: cyan;
+ color: #000;
+ text-decoration: none;
+ padding: 15px 42px;
+}

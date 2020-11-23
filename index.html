@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> 3djscubesc </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="yuva">
+    <meta name="description" content="webdevv yuva three.js source code">
+    <meta name="keywords" content="webyuva3cube">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="codemirror.css">
+    <link rel="stylesheet" href="icecoder.css">
+    <script src="codemirror.js">  </script>
+    <script src="htmlmixed.js">  </script>
+    <script src="xml.js">  </script>
+    <script src="javascript.js">  </script>
+    <script src="css.js">  </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
+ </head>
+ <body>
+     <section class="info3_js"> 
+     <div id="imgs"> 
+     <center>
+     <img id="3logo" src="three.png">  </img>
+      </center>
+      <h3> About Three.js </h3>
+      <p style="font-family: 'Merienda One', cursive;"> 
+      <span style="color: skyblue;">Three.js </span> is an programming language <br>
+      which is used to create 3d games, animation, 3d models and more...
+       </p>
+       <a class="am" href="https://threejs.org/"> VISIT </a> </button>
+      </div>
+      <div> &nbsp; </div>
+      <div class="line">  </div>
+      <div> &nbsp; </div>
+      <div id="vid_info"> 
+      <iframe>  </iframe>
+      <div> &nbsp; </div>
+     <p style="font-family: 'Merienda One', cursive;"> In this video we are going <br>
+      to see tutorial of 3d cube <br>
+      using three.js...</p>
+      <a class="am" href="https://threejs.org/"> Download full set </a> <br>
+      <div> &nbsp; </div>
+      <div>  &nbsp; </div>
+      <a class="am" href="three.min.js" download> Download only library </a> <br>
+      <div> &nbsp; </div>
+      <div class="line">  </div>
+       </div>
+      </section>
+     <section class="eds">
+     <div class="htmls">
+     <h4> index.html </h4>
+      <textarea id="htmlEditor"> 
+      <!DOCTYPE html>
+<html>
+	<head>
+		<title> 3d cube </title>
+	</head>
+	<body>
+	 <script src="js/three.min.js">  </script>
+	 	<script src="js/script.js"> 	</script>
+	</body>
+</html>
+       </textarea><br>
+       </div>
+       
+       <div class="csss">
+       <h4> style.css </h4>
+       <textarea id="cssEditor"> 
+       body{
+       margin: 0;
+       padding: 0;
+      }
+        </textarea><br>
+        </div>
+        <div class="jss">
+        <h4> script.js </h4>
+        <textarea id="jsEditor"> 
+        const scene = new THREE.Scene();	
+		const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+    
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+    window.addEventListener('resize', function() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    
+    });
+       var controls = new THREE.OrbitControls( camera, renderer.domElement);
+			const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+			const material = new THREE.MeshNormalMaterial( { color: 0xFFFFFF, wireframe: false } );
+			const cube = new THREE.Mesh( geometry, material );
+			scene.add( cube );
+			camera.position.z = 5;			
+			const animate = function() {
+				requestAnimationFrame( animate );
+				cube.rotation.x += 0.01;	
+			cube.rotation.y += 0.01;
+    
+				renderer.render( scene, camera );
+			};			
+			animate();
+         </textarea><br>
+         </div>
+         <script> 
+         var html = CodeMirror.fromTextArea(document.getElementById("htmlEditor"), {
+ lineNumbers: true,
+ theme: "icecoder",
+ mode: "htmlmixed"
+ });
+         var css = CodeMirror.fromTextArea(document.getElementById("cssEditor"), {
+ lineNumbers: true,
+ theme: "icecoder",
+ mode: "css"
+ });
+         var js = CodeMirror.fromTextArea(document.getElementById("jsEditor"), {
+ lineNumbers: true,
+ theme: "icecoder",
+ mode: "javascript"
+ });
+         
+          </script>
+          </section>
+          <div> &nbsp; </div>
+          <footer> <center> <p> <a style="color: grey;" href="https://www.youtube.com/channel/UC406hZx9TjtEMAJLVrf8T2g"> Webdevv yuva initiative </a> </p> </center> </footer>
+          <div> &nbsp; </div>
+          <div> &nbsp; </div>
+          <div> &nbsp; </div>
+  </body>
+</html>
